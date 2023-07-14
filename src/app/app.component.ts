@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
-import { }
+import { AngularHelpComponent } from './angular-help/angular-help.component';
+import { ProjectApplicationComponent } from './project-application/project-application.component';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,9 @@ import { }
     NavbarComponent,
     RouterLink,
     RouterOutlet,
+    RouterModule,
+    ProjectApplicationComponent,
+    AngularHelpComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -17,3 +21,4 @@ import { }
 export class AppComponent {
   title = 'Brokkr';
 }
+

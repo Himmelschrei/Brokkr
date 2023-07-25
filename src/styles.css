@@ -19,6 +19,18 @@
     @apply border-red-950;
 }
 
+.bg-solvis-red {
+    background-color: #e30613; 
+}
+
+.border-solvis-grey {
+    border-color: #4f4e52;
+}
+
+.txt-solvis-grey {
+    color: #4f4e52;
+}
+
 h1 {
     @apply text-violet-700 text-3xl font-bold underline;
 }

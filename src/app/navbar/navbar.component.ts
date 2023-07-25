@@ -15,5 +15,19 @@ import { ProjectApplicationComponent } from '../project-application/project-appl
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  private showLinks = false;
+
+  constructor() {}
+
+  handleClick() {
+    const navMenu = document.getElementById('navbar-menu');
+    const navLinks = document.getElementById('navbar-links');
+
+    navMenu?.addEventListener("click", () => {
+      navLinks?.classList.toggle("hidden");
+    })
+  }
+  
+
 
 }

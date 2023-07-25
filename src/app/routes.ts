@@ -4,12 +4,12 @@ import { ProjectApplicationComponent } from './project-application/project-appli
 
 const routeConfig: Routes = [
     {
-        path: 'angular-help/',
+        path: 'angular-help/angular-help.component.html',
         component: AngularHelpComponent,
         title: 'Angular Help'
     },
     {
-        path: 'project-application/',
+        path: 'project-application/project-application.component.html',
         component: ProjectApplicationComponent,
         title: 'Project Application'
     }

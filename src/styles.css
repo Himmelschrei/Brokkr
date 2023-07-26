@@ -19,6 +19,7 @@
     @apply border-red-950;
 }
 
+
 .bg-solvis-red {
     background-color: #e30613; 
 }
@@ -27,8 +28,14 @@
     border-color: #4f4e52;
 }
 
-.txt-solvis-grey {
+.text-solvis-grey {
     color: #4f4e52;
+}
+.text-solvis-red {
+    color: #e30613;
+}
+.text-solvis-red:hover {
+    color: #e30613;
 }
 
 h1 {

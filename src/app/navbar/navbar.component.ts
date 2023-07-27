@@ -26,9 +26,4 @@ export class NavbarComponent {
     const navLinks = document.getElementById('menu1');
     navLinks?.classList.toggle("hidden");
   }
-
-  handleClick2() {
-    const menu = document.getElementById("menutest");
-    menu?.classList.toggle("hidden");
-  }
 }

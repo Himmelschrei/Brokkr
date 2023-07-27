@@ -3,12 +3,14 @@ import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import routeConfig from './app/routes';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent,
   {
     providers: [
-      provideProtractorTestingSupport(),
-      provideRouter(routeConfig)
-    ]
+    provideProtractorTestingSupport(),
+    provideRouter(routeConfig),
+    provideNoopAnimations()
+]
   }
 ).catch(err => console.error(err));

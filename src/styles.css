@@ -45,3 +45,8 @@ h2 {
     @apply text-purple-500 text-2xl font-bold;
 }
 
+#menu-button1 {
+    position: relative;
+    top: 0;
+    right: 0;
+}

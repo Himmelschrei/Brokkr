@@ -20,14 +20,12 @@ export class NavbarComponent {
   constructor() {}
 
   handleClick() {
-    const navMenu = document.getElementById('navbar-menu');
-    const navLinks = document.getElementById('navbar-links');
-
-    navMenu?.addEventListener("click", () => {
-      navLinks?.classList.toggle("hidden");
-    })
+    const navLinks = document.getElementById('menu1');
+    navLinks?.classList.toggle("hidden");
   }
-  
 
-
+  handleClick2() {
+    const menu = document.getElementById("menutest");
+    menu?.classList.toggle("hidden");
+  }
 }

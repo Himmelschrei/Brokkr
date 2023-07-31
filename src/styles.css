@@ -38,8 +38,8 @@
     color: #e30613;
 }
 
-h1 {
-    @apply text-violet-700 text-3xl font-bold underline;
+.title {
+    @apply text-blue-500 text-4xl font-extrabold;
 }
 h2 {
     @apply text-purple-500 text-2xl font-bold;

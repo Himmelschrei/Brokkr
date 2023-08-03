@@ -3,6 +3,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 import { AngularHelpComponent } from './angular-help/angular-help.component';
 import { ProjectApplicationComponent } from './project-application/project-application.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { ProjectApplicationComponent } from './project-application/project-appli
     RouterModule,
     ProjectApplicationComponent,
     AngularHelpComponent,
+    FeedbackComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

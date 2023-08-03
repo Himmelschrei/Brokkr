@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AngularHelpComponent } from './angular-help/angular-help.component';
 import { ProjectApplicationComponent } from './project-application/project-application.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routeConfig: Routes = [
     {
@@ -12,6 +13,11 @@ const routeConfig: Routes = [
         path: 'project-application/project-application.component.html',
         component: ProjectApplicationComponent,
         title: 'Project Application'
+    },
+    {
+        path: 'feedback/feedback.component.html',
+        component: FeedbackComponent,
+        title: 'Feedback'
     }
 ];
 

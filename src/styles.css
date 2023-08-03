@@ -38,9 +38,6 @@
     color: #e30613;
 }
 
-.title {
-    @apply text-blue-500 text-4xl font-extrabold;
-}
 h2 {
     @apply text-purple-500 text-2xl font-bold;
 }
@@ -49,6 +46,23 @@ h2 {
     position: relative;
     top: 0;
     right: 0;
+}
+
+/* FORM STYLES */
+.form {
+    @apply flex justify-center max-w-5xl flex-col mx-auto mt-7 p-0;
+}
+.input-group-1 {
+    @apply relative z-0 w-full mb-6;
+}
+.input-group-2 {
+    @apply grid md:grid-cols-2 md:gap-6;
+}
+.title {
+    @apply text-blue-500 text-4xl font-extrabold;
+}
+.title-div {
+    @apply flex mt-10 justify-center;
 }
 
 html, body { height: 100%; }

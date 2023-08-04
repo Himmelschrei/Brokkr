@@ -2,4 +2,38 @@
     <div class="flex mt-10 justify-center">
         <span class="title">Feedback</span>
     </div>
+
+    <form class="form">
+        <div class="input-group-1 group">
+            <input type="projecTitle" name="floating_projectTitle" id="floating_projectTitle" class="input-form peer" placeholder=" " required />
+            <label for="floating_projectTitle" class="label-form">Projekttitel</label>
+        </div>
+        <div class="input-group-3">
+            <div class="input-group-1 group">
+                <input type="applicantName" name="floating_applicantName" id="floating_applicantName" class="input-form peer" placeholder=" " required />
+                <label for="floating_applicantName" class="label-form">Projektgeber*in</label>
+            </div>
+            <div class="input-group-1 group">
+                <input type="applicantEmail" name="floating_applicantEMail" id="floating_applicantEMail" class="input-form peer" placeholder=" " required />
+                <label for="floating_applicantEMail" class="label-form">Projektgeber*in E-Mail</label>
+            </div>
+            <div class="input-group-1 group">
+                <input type="department" name="floating_department" id="floating_department" class="input-form peer" placeholder=" " required />
+                <label for="floating_department" class="label-form">Abteilung</label>
+            </div>
+        </div>
+        
+        <label for="projectDescription" class="label-form-box">Projektbeschreibung</label>
+        <textarea id="projectDescription" rows="4" class="textarea-input" placeholder="Was waren die Anforderungen an das Projektteam? (Gerne aus Projektantrag übernehmen)"></textarea>
+        <label for="targetAchievement" class="label-form-box">Zielerreichung</label>
+        <textarea id="targetAchievement" rows="4" class="textarea-input" placeholder="Wurde das Projekt erreicht?&#10;Wenn nein, wurde ein ähnlich zu bewertendes Ergebnis geliefert?"></textarea>
+        <label for="timeKeeping" class="label-form-box">Zeiteinhaltung</label>
+        <textarea id="timeKeeping" rows="4" class="textarea-input" placeholder="Wurden Meilensteine und Deadlines eingehalten?&#10;Wenn nein, bitte die Zeitplanung bewerten (waren die Zeiten einzuhalten oder wurde unzureichend kalkuliert?)"></textarea>
+        <label for="positive" class="label-form-box">Positives</label>
+        <textarea id="positive" rows="4" class="textarea-input" placeholder="Hier ist Raum für die Dinge, die positiv hervorzuheben sind."></textarea>
+        <label for="criticism" class="label-form-box">Kritik</label>
+        <textarea id="criticism" rows="4" class="textarea-input" placeholder="Obwohl es sich von selbst versteht - Bitte bleibt bei der Kritik sachlich, fair und konstruktiv!"></textarea>
+        <label for="miscellaneous" class="label-form-box">Sonstige Anmerkungen</label>
+        <textarea id="miscellaneous" rows="4" class="textarea-input" placeholder="Manchmal ist es schwer, die Sachen zu kategorisieren - Hier ist Platz für alles, was oben nicht zuzuordnen war."></textarea>
+    </form>
 </body>

@@ -4,9 +4,15 @@
     </div>
     
     <form class="form">
-        <div class="input-group-1 group">
-            <input type="projectTitle" name="floating_projectTitle" id="floating_projectTitle" class="input-form peer" placeholder=" " required />
-            <label for="floating_projectTitle" class="label-form">Projekttitel</label>
+        <div class="input-group-3">
+            <div class="input-group-1 col-span-2 group">
+                <input type="projectTitle" name="floating_projectTitle" id="floating_projectTitle" class="input-form peer" placeholder=" " required />
+                <label for="floating_projectTitle" class="label-form">Projekttitel</label>
+            </div>
+            <div class="input-group-1 col-span-1 group">
+                <input type="text" id="currentDate" class="input-form peer" [value]="currentDate" readonly />
+                <label for="currentDate" class="label-form">Datum</label>
+            </div>
         </div>
         <div class="input-group-2">
             <div class="input-group-1 group">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectApplicationForm } from '../project-application-form';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -13,19 +13,28 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   styleUrls: ['./project-application.component.css']
 })
 export class ProjectApplicationComponent {
-  model = new ProjectApplicationForm('Test Application', 
-  new Date('2023-07-27'), 
-  'Carlos Pineda', 
-  'Softwareentwicklung', 
-  new Date('01.01.2024'), 
-  new Date('01.02.2024'), 
-  'This is just a test description for the project.', 
-  'Capability test description', 
-  'Schedule test description', 
-  'Contact Person', 
-  'Miscellanous string'
-  );
+  currentDate: string = '';
 
+  constructor() {  }
+
+  ngOnInit(): void {
+    this.setCurrentDate();
+  }
+
+  setCurrentDate(): void {
+    const currentDateInput = document.getElementById('currentDate') as HTMLInputElement;
+    const now = new Date();
+    const day = this.formatNumber(now.getDate());
+    const month = this.formatNumber(now.getMonth() + 1); //Months are zero-based
+    const year = now.getFullYear();
+
+    this.currentDate = `${day}.${month}.${year}`;
+  }
+
+  private formatNumber(number: number): string {
+    return number < 10 ? `0${number}` : `${number}`;
+  }
+  
   submitted = false;
 
   onSubmit() { this.submitted = true; }

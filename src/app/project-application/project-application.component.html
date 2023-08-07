@@ -30,12 +30,25 @@
                 <label for="floating_department" class="label-form">Abteilung</label>
             </div>
             <div class="input-group-1 group">
-                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="input-form peer" placeholder=" " required />
-                <label for="floating_phone" class="label-form">Date start placeholder</label>
+                <mat-form-field>
+                    <mat-label>Startdatum</mat-label>
+                    <script>
+                        console.log(minDate);
+                    </script>
+                    <input id="startDate" matInput [min]="this.minDate" [matDatepicker]="startDate" (dateChange)="updateMinEndDate($event.value)">
+                    <mat-hint>TT.MM.JJJJ</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #startDate></mat-datepicker>
+                </mat-form-field>
             </div>
             <div class="input-group-1 group">
-                <input type="text" name="floating_company" id="floating_company" class="input-form peer" placeholder=" " required />
-                <label for="floating_company" class="label-form">Date end placeholder</label>
+                <mat-form-field>
+                    <mat-label>Enddatum</mat-label>
+                    <input id="endDate" matInput [min]="this.minEndDate" [matDatepicker]="endDate">
+                    <mat-hint>TT.MM.JJJJ</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate></mat-datepicker>
+                </mat-form-field>
             </div>
         </div>
 

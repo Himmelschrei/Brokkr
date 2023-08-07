@@ -32,9 +32,6 @@
             <div class="input-group-1 group">
                 <mat-form-field>
                     <mat-label>Startdatum</mat-label>
-                    <script>
-                        console.log(minDate);
-                    </script>
                     <input id="startDate" matInput [min]="this.minDate" [matDatepicker]="startDate" (dateChange)="updateMinEndDate($event.value)">
                     <mat-hint>TT.MM.JJJJ</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
@@ -44,7 +41,7 @@
             <div class="input-group-1 group">
                 <mat-form-field>
                     <mat-label>Enddatum</mat-label>
-                    <input id="endDate" matInput [min]="this.minEndDate" [matDatepicker]="endDate">
+                    <input id="endDate" matInput [min]="minEndDate" [matDatepicker]="endDate" [value]="this.endDate">
                     <mat-hint>TT.MM.JJJJ</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
                     <mat-datepicker #endDate></mat-datepicker>

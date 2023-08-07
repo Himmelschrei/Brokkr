@@ -22,12 +22,18 @@ import { MatNativeDateModule } from '@angular/material/core';
 export class ProjectApplicationComponent {
   currentDate: string = '';
   minDate: Date;
-  minEndDate: Date
+  minEndDate: Date;
+  startDate: Date | null;
+  endDate: Date;
 
   constructor() {
     this.minDate = new Date(Date());
-    this.minEndDate = new Date;
+    this.minEndDate = new Date();
+    this.startDate = null;
+    this.endDate = new Date();
     console.log("This is the value of startDate: " + document.getElementById('startDate'));
+    console.log("Start date: " + document.getElementById('startDate'));
+    console.log("End date: " + document.getElementById('endDate'))
   }
 
   ngOnInit(): void {
@@ -49,10 +55,25 @@ export class ProjectApplicationComponent {
   }
 
   updateMinEndDate(startDate: Date) {
-    if (startDate) {
+    if (startDate && this.minEndDate < startDate) {
+      console.log("Opción 1");
       this.minEndDate = startDate;
     } else {
+      console.log("Opción 2");
       this.minEndDate = new Date();
+    }
+    this.updateEndDate(startDate);
+    console.log("Start date: " + startDate);
+  }
+
+  updateEndDate(startDate: Date) {
+    // Update end date if start date is set after current end date
+    if (startDate && startDate.getTime() > this.endDate.getTime()) {
+      const newEndDate = new Date(startDate);
+      newEndDate.setDate(newEndDate.getDate() + 1);
+      this.endDate = newEndDate;
+      console.log("End date: " + this.endDate);
+      console.log("New end date: " + newEndDate);
     }
   }
   

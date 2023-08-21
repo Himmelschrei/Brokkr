@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, FormatWidth } from '@angular/common';
 import { ProjectApplicationForm } from '../project-application-form';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, DateAdapter } from '@angular/material/core';
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-project-application',
@@ -20,13 +22,16 @@ import { MatNativeDateModule } from '@angular/material/core';
   styleUrls: ['./project-application.component.css']
 })
 export class ProjectApplicationComponent {
+  dateFormControl = new FormControl();
   currentDate: string = '';
   minDate: Date;
   minEndDate: Date;
   startDate: Date | null;
   endDate: Date;
+  
 
-  constructor() {
+  constructor(private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('de');
     this.minDate = new Date(Date());
     this.minEndDate = new Date();
     this.startDate = null;

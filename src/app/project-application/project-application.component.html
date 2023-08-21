@@ -1,4 +1,4 @@
-<body>
+<body class="mx-8">
     <div class="title-div">
         <span class="title">Projektantrag</span>
     </div>
@@ -30,7 +30,7 @@
                 <label for="floating_department" class="label-form">Abteilung</label>
             </div>
             <div class="input-group-1 group">
-                <mat-form-field>
+                <mat-form-field class="w-full">
                     <mat-label>Startdatum</mat-label>
                     <input id="startDate" matInput [min]="this.minDate" [matDatepicker]="startDate" (dateChange)="updateMinEndDate($event.value)">
                     <mat-hint>TT.MM.JJJJ</mat-hint>
@@ -39,7 +39,7 @@
                 </mat-form-field>
             </div>
             <div class="input-group-1 group">
-                <mat-form-field>
+                <mat-form-field class="w-full">
                     <mat-label>Enddatum</mat-label>
                     <input id="endDate" matInput [min]="minEndDate" [matDatepicker]="endDate" [value]="this.endDate">
                     <mat-hint>TT.MM.JJJJ</mat-hint>

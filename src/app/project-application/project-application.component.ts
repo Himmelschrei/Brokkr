@@ -5,7 +5,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule, DateAdapter } from '@angular/material/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -16,13 +16,27 @@ import { FormControl } from '@angular/forms';
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './project-application.component.html',
   styleUrls: ['./project-application.component.css']
 })
 export class ProjectApplicationComponent {
-  dateFormControl = new FormControl();
+  projectApplicationForm = new FormGroup({
+    projectTitle: new FormControl(''),
+    applicantName: new FormControl(''),
+    applicantEMail: new FormControl(''),
+    department: new FormControl(''),
+    startDate: new FormControl(''),
+    endDate: new FormControl(''),
+    projectDescription: new FormControl(''),
+    capabilityPlanning: new FormControl(''),
+    schedule: new FormControl(''),
+    contactPerson: new FormControl(''),
+    miscellaneous: new FormControl(''),
+  })
+
   currentDate: string = '';
   minDate: Date;
   minEndDate: Date;
@@ -58,6 +72,29 @@ export class ProjectApplicationComponent {
   private formatNumber(number: number): string {
     return number < 10 ? `0${number}` : `${number}`;
   }
+
+  submitApplication() {
+    this.printApplication(
+      this.projectApplicationForm.value.projectTitle ?? '',
+      this.projectApplicationForm.value.applicantName ?? '',
+      this.projectApplicationForm.value.applicantEMail ?? '',
+      this.projectApplicationForm.value.department ?? '',
+      this.projectApplicationForm.value.startDate ?? '',
+      this.projectApplicationForm.value.endDate ?? '',
+      this.projectApplicationForm.value.projectDescription ?? '',
+      this.projectApplicationForm.value.capabilityPlanning ?? '',
+      this.projectApplicationForm.value.schedule ?? '', 
+      this.projectApplicationForm.value.contactPerson ?? '', 
+      this.projectApplicationForm.value.miscellaneous ?? '', 
+    )
+  }
+
+  printApplication(projectTitle: string, applicantName: string, applicantEMail: string, department: string, startDate: string, endDate: string, projectDescription: string, capabilityPlanning: string, schedule: string, contactPerson: string, miscellaneous: string) {
+    console.log("Project title: " + projectTitle);
+    console.log("Projektgeber: " + applicantName + ". Projektgeber E-Mail: " + applicantEMail);
+    console.log("Abteilung: " + department + ". Startdatum: " + startDate + ". Enddatum: " + endDate);
+  }
+
 
   updateMinEndDate(startDate: Date) {
     if (startDate && this.minEndDate < startDate) {

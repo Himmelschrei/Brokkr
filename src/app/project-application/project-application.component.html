@@ -3,10 +3,10 @@
         <span class="title">Projektantrag</span>
     </div>
     
-    <form class="form">
+    <form class="form" [formGroup]="projectApplicationForm" (submit)="submitApplication()">
         <div class="input-group-3">
             <div class="input-group-1 col-span-2 group">
-                <input type="projectTitle" name="floating_projectTitle" id="floating_projectTitle" class="input-form peer" placeholder=" " required />
+                <input type="projectTitle" name="floating_projectTitle" id="floating_projectTitle" class="input-form peer" placeholder=" " formControlName="projectTitle" required />
                 <label for="floating_projectTitle" class="label-form">Projekttitel</label>
             </div>
             <div class="input-group-1 col-span-1 group">
@@ -16,23 +16,23 @@
         </div>
         <div class="input-group-2">
             <div class="input-group-1 group">
-                <input type="applicantName" name="floating_applicantName" id="floating_applicantName" class="input-form peer" placeholder=" " required />
+                <input type="applicantName" name="floating_applicantName" id="floating_applicantName" class="input-form peer" placeholder=" " formControlName="applicantName" required />
                 <label for="floating_applicantName" class="label-form">Projektgeber*in</label>
             </div>
             <div class="input-group-1 group">
-                <input type="applicantEMail" name="floating_applicantEMail" id="floating_applicantEMail" class="input-form peer" placeholder=" " required />
+                <input type="applicantEMail" name="floating_applicantEMail" id="floating_applicantEMail" class="input-form peer" placeholder=" " formControlName="applicantEMail" required />
                 <label for="floating_applicantEMail" class="label-form">Projektgeber*in E-Mail</label>
             </div>
         </div>
         <div class="input-group-3">
             <div class="input-group-1 group">
-                <input type="department" name="floating_department" id="floating_department" class="input-form peer" placeholder=" " required />
+                <input type="department" name="floating_department" id="floating_department" class="input-form peer" placeholder=" " formControlName="department" required />
                 <label for="floating_department" class="label-form">Abteilung</label>
             </div>
             <div class="input-group-1 group">
                 <mat-form-field class="w-full">
                     <mat-label>Startdatum</mat-label>
-                    <input id="startDate" matInput [min]="this.minDate" [matDatepicker]="startDate" (dateChange)="updateMinEndDate($event.value)">
+                    <input id="startDate" matInput [min]="this.minDate" [matDatepicker]="startDate" (dateChange)="updateMinEndDate($event.value)" formControlName="startDate">
                     <mat-hint>TT.MM.JJJJ</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
                     <mat-datepicker #startDate></mat-datepicker>
@@ -41,7 +41,7 @@
             <div class="input-group-1 group">
                 <mat-form-field class="w-full">
                     <mat-label>Enddatum</mat-label>
-                    <input id="endDate" matInput [min]="minEndDate" [matDatepicker]="endDate" [value]="this.endDate">
+                    <input id="endDate" matInput [min]="minEndDate" [matDatepicker]="endDate" [value]="this.endDate" formControlName="endDate">
                     <mat-hint>TT.MM.JJJJ</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
                     <mat-datepicker #endDate></mat-datepicker>
@@ -50,14 +50,16 @@
         </div>
 
         <label for="projectDescription" class="label-form-box">Projektbeschreibung</label>
-        <textarea id="projectDescription" rows="4" class="textarea-input" placeholder="Bitte so ausführlich wie möglich die Anforderungen an das Projekt beschreiben"></textarea>
+        <textarea id="projectDescription" rows="4" class="textarea-input" placeholder="Bitte so ausführlich wie möglich die Anforderungen an das Projekt beschreiben" formControlName="projectDescription"></textarea>
         <label for="capabilityPlanning" class="label-form-box">Ressourcenplanung</label>
-        <textarea id="capabilityPlanning" rows="4" class="textarea-input" placeholder="Hier bitte eine Einschätzung der benötigten Materialien/Ressourcen aufführen"></textarea>
+        <textarea id="capabilityPlanning" rows="4" class="textarea-input" placeholder="Hier bitte eine Einschätzung der benötigten Materialien/Ressourcen aufführen" formControlName="capabilityPlanning"></textarea>
         <label for="schedule" class="label-form-box">Zeitplan</label>
-        <textarea id="schedule" rows="4" class="textarea-input" placeholder="Hier bitte einen groben Zeitplan festhalten (inkl. Meilensteine und Deadlines)"></textarea>
+        <textarea id="schedule" rows="4" class="textarea-input" placeholder="Hier bitte einen groben Zeitplan festhalten (inkl. Meilensteine und Deadlines)" formControlName="schedule"></textarea>
         <label for="contactPerson" class="label-form-box">Ansprechpartner*in</label>
-        <textarea id="contactPerson" rows="4" class="textarea-input" placeholder="Auflistung aller Projektbeteiligten mit entsprechender Funktion im Projekt"></textarea>
+        <textarea id="contactPerson" rows="4" class="textarea-input" placeholder="Auflistung aller Projektbeteiligten mit entsprechender Funktion im Projekt" formControlName="contactPerson"></textarea>
         <label for="miscellaneous" class="label-form-box">Sonstiges</label>
-        <textarea id="miscellaneous" rows="4" class="textarea-input" placeholder="Freier Textbereich um weitere Informationen oder Ähnliches festzuhalten"></textarea>
+        <textarea id="miscellaneous" rows="4" class="textarea-input" placeholder="Freier Textbereich um weitere Informationen oder Ähnliches festzuhalten" formControlName="miscellaneous"></textarea>
+
+        <button type="submit" class="btn-red">Send</button>
     </form>
 </body>

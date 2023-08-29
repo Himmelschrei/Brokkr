@@ -60,6 +60,6 @@
         <label for="miscellaneous" class="label-form-box">Sonstiges</label>
         <textarea id="miscellaneous" rows="4" class="textarea-input" placeholder="Freier Textbereich um weitere Informationen oder Ähnliches festzuhalten" formControlName="miscellaneous"></textarea>
 
-        <button type="submit" class="btn-red">Send</button>
+        <button type="submit" (click)="onSubmit()" class="btn-form">Send</button>
     </form>
 </body>

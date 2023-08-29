@@ -57,6 +57,8 @@ export class ProjectApplicationComponent {
 
   ngOnInit(): void {
     this.setCurrentDate();
+    
+    // this.projec
   }
 
   setCurrentDate(): void {
@@ -121,5 +123,12 @@ export class ProjectApplicationComponent {
   
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { 
+    if (this.projectApplicationForm.invalid) {
+      alert('Please make sure you have filled all necessary fields!');
+      return;
+    }
+    alert('Nice!');
+    this.submitted = true; 
+  }
 }

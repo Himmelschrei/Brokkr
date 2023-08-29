@@ -49,6 +49,15 @@ h2 {
 }
 
 /* FORM STYLES */
+.btn-form {
+    @apply w-1/6 m-8 p-2 self-center rounded-lg bg-blue-500 text-white;
+}
+.btn-form:hover {
+    @apply bg-blue-600;
+}
+.btn-form:active {
+    @apply bg-blue-800;
+}
 .form {
     @apply flex justify-center max-w-5xl flex-col mx-auto mt-7 p-0;
 }
